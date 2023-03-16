@@ -9,7 +9,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
-import java.util.*;
+//import java.util.*;
 
 /**
  * @author brtah
@@ -21,7 +21,7 @@ class IntegerSetTest {
 	 * @throws java.lang.Exception
 	 */
 	@BeforeEach
-	void setUp() throws Exception {
+	public void setUp() throws Exception {
 		mySet = new IntegerSet();
 	}
 
@@ -29,13 +29,13 @@ class IntegerSetTest {
 	 * @throws java.lang.Exception
 	 */
 	@AfterEach
-	void tearDown() throws Exception {
+	public void tearDown() throws Exception {
 		mySet = null;
 	}
 
 	@Test
 	@DisplayName("Test case for add method")
-	void testAdd() {
+	public void testAdd() {
 		mySet.add(5);
 		assertEquals(1, mySet.length());
 		assertTrue(mySet.contains(5));
@@ -43,7 +43,7 @@ class IntegerSetTest {
 	
 	@Test
 	@DisplayName("Test case for remove method")
-	void testRemove() throws IntegerSetException{
+	public void testRemove() throws IntegerSetException{
 		for(int i = 0; i < 7; i++) {
 			mySet.add(i);
 		}
@@ -53,7 +53,7 @@ class IntegerSetTest {
 	
 	@Test
 	@DisplayName("Test case for length method")
-	void testLength() {
+	public void testLength() {
 		for (int i = 0; i < 5; i++) {
 			mySet.add(i);
 		}
@@ -62,14 +62,14 @@ class IntegerSetTest {
 	
 	@Test
 	@DisplayName("Test case for clear method")
-	void testClear() {
+	public void testClear() {
 		mySet.add(14); mySet.clear();
 		assertEquals(mySet.length(), 0);
 	}
 	
 	@Test
 	@DisplayName("Test case for equals method")
-	void testEquals() {
+	public void testEquals() {
 		IntegerSet otherSet = new IntegerSet();
 		IntegerSet testSet1 = new IntegerSet();
 		IntegerSet testSet2 = new IntegerSet();
@@ -88,7 +88,7 @@ class IntegerSetTest {
 	
 	@Test
 	@DisplayName("Test case for contains method")
-	void contains() {
+	public void contains() {
 		mySet.add(314);
 		
 		assertTrue(mySet.contains(314));
@@ -98,7 +98,7 @@ class IntegerSetTest {
 	
 	@Test
 	@DisplayName("Test case for largest method")
-	void testLargest() throws IntegerSetException {
+	public void testLargest() throws IntegerSetException {
 		mySet.add(10);
 		mySet.add(20);
 		mySet.add(30);
@@ -109,13 +109,13 @@ class IntegerSetTest {
 	
 	@Test
 	@DisplayName("Test case for largest exception thrown")
-	void testLargestException() {
+	public void testLargestException() {
 		assertThrows(IntegerSetException.class, () -> mySet.largest());
 	}
 	
 	@Test
 	@DisplayName("Test case for smallest method")
-	void testSmallest() throws IntegerSetException {
+	public void testSmallest() throws IntegerSetException {
 		mySet.add(20);
 		mySet.add(40);
 		mySet.add(60);
@@ -125,13 +125,13 @@ class IntegerSetTest {
 	
 	@Test
 	@DisplayName("Test case for smallest exception")
-	void testSmallestException() {
+	public void testSmallestException() {
 		assertThrows(IntegerSetException.class, () -> mySet.smallest());
 	}
 	
 	@Test
 	@DisplayName("Test case for union method")
-	void testUnion() {
+	public void testUnion() {
 		IntegerSet otherSet = new IntegerSet();
 		IntegerSet nextSet = new IntegerSet();
 		IntegerSet constSet = new IntegerSet();
@@ -155,7 +155,7 @@ class IntegerSetTest {
 	
 	@Test
 	@DisplayName("Test case for intersect method")
-	void testInteserct() {
+	public void testInteserct() {
 		IntegerSet otherSet = new IntegerSet();
 		IntegerSet constSet = new IntegerSet();
 		
@@ -178,7 +178,7 @@ class IntegerSetTest {
 	
 	@Test
 	@DisplayName("Test case for diff method")
-	void testDiff() {
+	public void testDiff() {
 		IntegerSet otherSet = new IntegerSet();
 		//IntegerSet nextSet = new IntegerSet();
 		IntegerSet constSet = new IntegerSet();
@@ -199,13 +199,13 @@ class IntegerSetTest {
 	
 	@Test
 	@DisplayName("Test case for isEmpty method")
-	void testEmpty() {
+	public void testEmpty() {
 		assertTrue(mySet.isEmpty());
 	}
 	
 	@Test
 	@DisplayName("Test case for toString")
-	void testString() {
+	public void testString() {
 		mySet.add(1);
 		mySet.add(2);
 		mySet.add(3);
