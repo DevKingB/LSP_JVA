@@ -11,22 +11,22 @@ public class SongsDatabase {
 	
 	// Add a song title to a genre
 	public void addSong(String genre, String songTitle) {
-		HashSet<String> mySongSet = map.get(genre);
+		HashSet<String> mySongSet = map.get(genre); //returns the HashSet from the given key
 		if(mySongSet == null) {
 			mySongSet = new HashSet<String>();
 			map.put(genre, mySongSet);
 		}
-		mySongSet.add(songTitle);
+		mySongSet.add(songTitle); //adds song title to the HashSet
 	}
 	
 	//Return the Set that contains all songs for a genre 
 	public Set<String> getSongs(String genre) {
-		HashSet<String> mySongSet = map.get(genre);
+		HashSet<String> mySongSet = map.get(genre); //returns the HashSet from the given key
 		if(mySongSet == null) {
 			mySongSet = new HashSet<String>();
 
 		}
-		return mySongSet;
+		return mySongSet; //returns sets of songs
 	}
 	
 	//Return genre, i.e., jazz, given a song title 
