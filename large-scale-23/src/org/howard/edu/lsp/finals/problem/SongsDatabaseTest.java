@@ -66,6 +66,7 @@ class SongsDatabaseTest {
         mySongs = myDatabase.getSongs("Jazz");
         assertTrue(mySongs.contains("Sir Duke"));
         assertFalse(mySongs.contains("Black People Song"));
+        System.out.println(myDatabase.getSongs("Jazz")); //prints list of song in Jazz
         
         //clearing set
         mySongs.clear();
@@ -74,6 +75,7 @@ class SongsDatabaseTest {
 	    mySongs = myDatabase.getSongs("Rock");
 	    assertTrue(mySongs.contains("Hotel California"));
 	    assertFalse(mySongs.contains("Take the A Train"));
+	    System.out.println(myDatabase.getSongs("Rock")); //prints list of songs in Rock
 	    
 	    //clearing set
         mySongs.clear();
@@ -82,6 +84,8 @@ class SongsDatabaseTest {
 	    mySongs = myDatabase.getSongs("Rap");
 	    assertFalse(mySongs.contains("Mockingbird"));
 	    assertTrue(mySongs.contains("Freestyle"));
+	    
+	    System.out.println(myDatabase.getSongs("Rap")); //prints list of songs in Rap
 	}
 	
 	@Test
@@ -90,7 +94,11 @@ class SongsDatabaseTest {
 		assertEquals("Pop", myDatabase.getGenreOfSong("Smooth Criminal"));
         assertEquals("Rock", myDatabase.getGenreOfSong("Hotel California"));
         assertEquals("Rap", myDatabase.getGenreOfSong("Freestyle"));
+        System.out.println(myDatabase.getGenreOfSong("Smooth Criminal")); //prints genre of song
+        System.out.println(myDatabase.getGenreOfSong("Freestyle")); //prints genre of song
         assertNull(myDatabase.getGenreOfSong("Hello"));
 	}
+	
+	
 	
 }
